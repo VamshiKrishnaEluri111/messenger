@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+
+
+
+
+
+
+
+    <div class="col-sm-3 sidenav">
+      <br>
+      <ul id ="mylist" class="nav nav-pills nav-stacked">
+        <li class="active"><a>Outbox</a></li>
+        <li  >
+          <a class="hovering" *ngFor="let user of this.service.outboxMessages , let i = index"
+                                           (click) = "getOutboxMessage(user.id,i)"
+                                           [ngClass]="{'selected-row': indexOfMessageInfo === i}">
+            <p class="messages" >
+                <span class="user-reciever">{{user.reciever}}</span>
+                <span class="time-stamp">{{user.sentTimeInString.substring(0, 10)}}</span>
+            </p>
+          </a>
+        </li>
+      </ul>
+      <br>
+      <!-- <a (click)= "logout()" class="logout-button" id="fixed-home">Logout</a>
+      <a (click)= "goToHome()" class="logout-button" id="fixed-logout">Home</a> -->
+    </div>
+
+
+
+
+
+
+
+    <div>
+      <a class="compose-button" (click)="goToReply()">Compose</a>
+      <a (click)= "goToHome()" class="logout-button" >Home</a>
+      <a (click)= "logout()" class="logout-button" >Logout</a>
+
+      <div  class="col-sm-9" *ngIf="activeMessage ">
+        <hr>
+        <h2>{{this.activeMessage.reciever}}</h2>
+        <div>
+            <span style="font-size: small;">Sent to <b>{{this.activeMessage.reciever}}</b>, {{this.activeMessage.sentTimeInString}}
+              <a class="delete-button" (click)="deleteSenderMessage(activeMessage.id)">Delete</a>
+              <br>
+            <span style="font-size: small;" *ngIf="this.activeMessage.isOpened"> Seen at {{this.activeMessage.seenTimeInString}}</span></span>
+        </div>
+
+        <hr>
+
+        <br>
+        <div *ngIf="this.activeMessage.message" style="white-space: pre-wrap;" >
+          <h4><b><i >{{this.activeMessage.message}}</i></b></h4>
+        </div>
+        <br>
+        <br>
+        <div *ngIf="this.activeMessage.fileData">
+          <img src="assets\open-file.png" width="100" height="100" alt="" (click)="download()">
+          <br>
+          <h5>{{this.activeMessage.fileName}}</h5>
+          <a (click)="download()" class="download-button" >Download</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>
+</body>
+</html>

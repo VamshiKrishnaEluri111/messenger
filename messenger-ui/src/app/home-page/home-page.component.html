@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Transparent Login Form HTML CSS</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body >
+
+
+      <div class="bg-img">
+
+         <div class="content">
+
+            <form>
+              <div style="color: rgb(26, 218, 106);">
+               <h1>{{this.service.userPersonalName}}</h1>
+               </div>
+               <br>
+               <br>
+               <div class="field">
+                  <span class="fa fa-comment"></span>
+                  <input type="submit" (click) = "sendMessage()" value="Send Message">
+               </div>
+
+               <div class="field space">
+                  <span class="fa fa-inbox"></span>
+                  <input type="submit"  (click) = "inbox()" value="Inbox">
+               </div>
+
+               <div class="field space">
+                  <span class="fa fa-paper-plane"></span>
+                  <input type="submit" (click) = "outbox()" value="Outbox">
+               </div>
+            </form>
+            <br>
+            <br>
+            <a (click)="logout()" class="logout-button">Logout</a>
+            <br>
+            <a (click)="deleteAccount()" class="logout-button">Delete My Account</a>
+            <!-- <a (click)="this.service.logout()" class="btn"><i class="fa fa-download" ></i> Logout</a> -->
+         </div>
+      </div>
+      <script>
+         const pass_field = document.querySelector('.pass-key');
+         const showBtn = document.querySelector('.show');
+         showBtn.addEventListener('click', function(){
+          if(pass_field.type === "password"){
+            pass_field.type = "text";
+            showBtn.textContent = "HIDE";
+            showBtn.style.color = "#3498db";
+          }else{
+            pass_field.type = "password";
+            showBtn.textContent = "SHOW";
+            showBtn.style.color = "#222";
+          }
+         });
+      </script>
+   </body>
+</html>
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Transparent Login Form HTML CSS</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <div class="bg-img">
+         <div class="content">
+            <header>Register</header>
+            <form action="#">
+               <div class="field">
+                  <span class="fa fa-user"></span>
+                  <input type="text" required placeholder="Name">
+               </div>
+
+               <br>
+               <div class="field">
+                <span class="fa fa-user"></span>
+                <input type="text" required placeholder="Username">
+               </div>
+
+               <div class="field space">
+                  <span class="fa fa-lock"></span>
+                  <input type="password" class="pass-key" required placeholder="Password">
+                  <span class="show">SHOW</span>
+               </div>
+
+               <div class="field space">
+                <span class="fa fa-lock"></span>
+                <input type="password" class="pass-key" required placeholder="Confirm Password">
+                <span class="show">SHOW</span>
+               </div>
+
+               <br>
+               <div class="field">
+                  <input type="submit" value="SIGNUP">
+               </div>
+            </form>
+         </div>
+      </div>
+      <script>
+         const pass_field = document.querySelector('.pass-key');
+         const showBtn = document.querySelector('.show');
+         showBtn.addEventListener('click', function(){
+          if(pass_field.type === "password"){
+            pass_field.type = "text";
+            showBtn.textContent = "HIDE";
+            showBtn.style.color = "#3498db";
+          }else{
+            pass_field.type = "password";
+            showBtn.textContent = "SHOW";
+            showBtn.style.color = "#222";
+          }
+         });
+      </script>
+   </body>
+</html> -->

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Form</title>
+   <style>
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .dropdown {
+      /* position: absolute; */
+      border: 1px solid #ccc;
+      max-height: 100px;
+      overflow-y: auto;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    li:hover {
+      background-color: #f0f0f0;
+    }
+
+  </style>
+</head>
+
+
+<body class="bg-img" >
+    <div>
+        <form>
+          <div style="height: 170px;">
+
+            <label for="Recipient">Select the recipient:</label>
+            <input style="margin-bottom: 0px;" type="text" name = "Recipient" id="Recipient"  [(ngModel)]="searchTerm" (ngModelChange)="onSearchTermChange()" placeholder="Search users">
+            <div style="margin-top: 0px; margin-bottom: 0px;" *ngIf="showDropdown" class="dropdown">
+              <ul>
+                <li *ngFor="let name of this.service.filteredUsernames" (click)="selectName(name)">
+                  {{ name }}
+                </li>
+              </ul>
+            </div>
+
+
+            <!-- <select open id="Recipient" name="Recipient" [(ngModel)]="reciever">
+              <option *ngFor="let username of this.service.filteredUsernames" [value]="username">{{username}}</option>
+            </select> -->
+
+
+              <!-- <div height = 20px *ngFor="let username of this.filteredUsernames" (click)="reciever=username">
+                  {{username}}
+              </div> -->
+
+
+            <!-- <label for="Recipient">Select the recipient:</label> -->
+            <!-- <select open id="Recipient" name="Recipient" [(ngModel)]="reciever">
+              <option *ngFor="let username of this.service.allUsernames" [value]="username" >{{username}}</option>
+            </select> -->
+
+          </div>
+          <div style="margin-top: 0px;">
+            <label for="comment">Enter your text:</label>
+            <textarea id="comment" name="comment" rows="4" cols="50" [(ngModel)]="this.message"></textarea>
+          </div>
+
+          <div>
+            <label for="file">Upload File:</label>
+            <input #fileRef type="file" id="file" name="file" (change)="onFileChange($event)">
+          </div>
+
+          <div style = "font-size: small;" *ngIf="isRecieverNotSelected || isMesssageNotPresent || isFileSizeTooBig">
+            <p *ngIf="isRecieverNotSelected" style="color: red;">
+                {{this.recieverNotSelectedMsg}}
+            </p>
+            <br>
+
+            <p *ngIf="isMesssageNotPresent" style="color: red;">
+                {{this.isMesssageNotPresentMsg}}
+            </p>
+            <br>
+
+            <p *ngIf="isFileSizeTooBig" style="color: red;">
+              {{this.fileSizeTooBigMsg}}
+            </p>
+          </div>
+
+
+          <button type="submit" (click) = "submit()">Send Message</button>
+        </form>
+
+        <br>
+        <a (click) = "logout()" class="home-button">Logout</a>
+        <a (click)="goToHome()" class="home-button" id="logout">Home</a>
+    </div>
+</body>
+</html>

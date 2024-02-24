@@ -1,0 +1,140 @@
+.compose-button {
+  cursor: pointer;
+  padding: 8px 16px;
+  background-color: #337ab7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-right: 670px;
+  margin-top: 22px;
+  display: inline-block;
+}
+.logout-button {
+  cursor: pointer;
+  padding: 8px 16px;
+  background-color: #337ab7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-top: 22px;
+  display: inline-block;
+}
+
+
+.delete-button {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color:  #bbc3c9;
+  color: #5a3c3c;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+  margin-left: 180px;
+  display: inline-block;
+}
+.delete-button:hover{
+  color: #1879ce;
+}
+.download-button{
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #bbc3c9;
+  color: #5a3c3c;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+  /* margin-left: 20px; */
+  display: inline-block;
+}
+.download-button:hover{
+  color: #1879ce;
+}
+.reply-button {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #bbc3c9;
+  color: #5a3c3c;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+  /* margin-left: 20px; */
+  display: inline-block;
+}
+.reply-button:hover{
+  color: #1879ce;
+}
+
+.hovering:hover {
+  background-color: #d0d4d6;
+  color: rgb(0, 0, 0);
+}
+
+/* #fixed-home {
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  margin-top: 590px;
+
+}
+#fixed-logout {
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  margin-top: 590px;
+  margin-left: 230px;
+} */
+
+.messages{
+  margin: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-sender {
+  flex-grow: 1;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.time-stamp {
+  cursor: pointer;
+  /* padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+  margin-left: 100px;
+  display: inline-block; */
+}
+.count {
+  cursor: pointer;
+  padding: 1px 10px;
+  background-color: white;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 10px;
+  margin-left: 180px;
+  display: inline-block;
+}
+
+.selected-row {
+  background-color: #337ab7;
+  color: white;
+}
+
+.sidenav{
+  background-color: #f1f1f1;
+  height: 100vh;
+  overflow-y: auto;
+}
+
