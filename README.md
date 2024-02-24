@@ -22,7 +22,7 @@ While paid cloud services are often used for file storage, we have opted for loc
 # Data Encryption
 It's important to note that while files are stored locally, sensitive data such as messages and passwords are still stored in the database. However, to ensure security and privacy, this sensitive data is encrypted before being stored in the database.
 
-# cGetting Started
+# Getting Started
 Before running the Messenger Application, ensure you have the D:\local-storage folder created on your system for file storage.
 
 To create the D:\local-storage folder:
@@ -40,10 +40,15 @@ Once the D:\local-storage folder is created and set up, you can proceed to run t
 # Below are my application properties , if you want change it accordingly
 
 spring.datasource.url=jdbc:mysql://localhost:3306/messengerdb
+
 spring.datasource.username=root
+
 spring.datasource.password=virat1718
+
 spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+
 spring.jpa.hibernate.ddl-auto=update
 
 
