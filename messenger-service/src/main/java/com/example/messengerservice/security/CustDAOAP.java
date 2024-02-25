@@ -21,7 +21,7 @@ public class CustDAOAP extends DaoAuthenticationProvider {
 		
 		
 		
-//		by calling this method you will get actual daoProvider authentication logic to validate the user 
+//		by calling this below method you will get dafault daoAuthenticationProvider authentication logic provided by spring to validate a user 
 		
 		return super.authenticate(authentication);
 	}
